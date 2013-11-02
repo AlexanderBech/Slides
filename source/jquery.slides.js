@@ -87,6 +87,15 @@
         display: "none",
         webkitBackfaceVisibility: "hidden"
       });
+      if(this.data.total==1){
+        $element.show();
+        $(".slidesjs-control", $element).children().show();
+        this.update();
+        $(window).bind("resize", function() {
+          return _this.update();
+        });
+        return false;
+      }
       $.each($(".slidesjs-control", $element).children(), function(i) {
         var $slide;
         $slide = $(this);
